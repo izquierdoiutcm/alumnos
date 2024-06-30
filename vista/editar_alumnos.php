@@ -1,6 +1,12 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['usuario'])){
+      header('location:../index.php');
+      die();
+    }
     include_once('templates/header.php');
 
+    
     if (array_key_exists('id_usuario', $_COOKIE)) {
         $id = $_COOKIE['id_usuario'];        
       } else {
