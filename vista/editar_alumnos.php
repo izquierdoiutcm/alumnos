@@ -40,7 +40,7 @@
   </div>
   <input type="hidden" class="form-control" name='accion' value='actualizar_datos' required>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary">Modificar</button>
+    <button type="submit" class="btn btn-primary" name="submit">Modificar</button>
     <button type="button" class="btn btn-danger" onclick="window.location.assign('todos_alumnos.php')">Regresar</button>
   </div>
 </form>

@@ -40,6 +40,7 @@ class Alumnos{
             $st = NULL;          
            return $exito;
         }
+
         function delete_alumnos($id){
             $exito = false;
             $sql = 'UPDATE alumnos set activo = 0 WHERE id = ?';
@@ -51,4 +52,31 @@ class Alumnos{
             $st = NULL;         
             return $exito; 
         }
+
+        function insertAlumnos($ced, $nom, $dir){        
+            $exito = false;
+           
+            $sql = 'INSERT INTO alumnos (cedula, nombre, direccion) VALUES (?,?,?)';
+            $st  = $this->conexion->prepare($sql);
+            $st->bindParam(1, $ced);
+            $st->bindParam(2, $nom);
+            $st->bindParam(3, $dir);
+            if($st->execute()){
+                $exito = true;
+            }
+            $st = NULL;  
+            
+            return $exito;
+        }        
+           
+    
+        function validarAlumnoExiste($ced){            
+            $sql = 'SELECT cedula FROM alumnos WHERE cedula = ?';
+            $st  = $this->conexion->prepare($sql);
+            $st->bindParam(1, $ced);
+            $st->execute();
+            $alumnoExiste = $st->fetchColumn(0);           
+            $st = NULL;            
+            return $alumnoExiste;
+        } 
     }

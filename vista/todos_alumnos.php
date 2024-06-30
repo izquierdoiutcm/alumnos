@@ -16,7 +16,7 @@
         <div class='col-sm-2'></div>
         <div class='col-sm-8' id='panel_mostrar'>
             <br>
-            <tabla class="table table-striped table-bordered" style="width:100%">
+            <tabla class="table table-striped table-bordered" style="width:100%" id="myTable">
                 <thead>
                     <tr>
                         <td class='p-4' colspan='4'>
@@ -45,7 +45,7 @@
                                 <form method='post' action="../controlador/controlador_alumnos.php">
                                     <input type='hidden' name='id' value='<?=$registro['id']?>'>
                                     <input type='hidden' name='accion' value='editar'>
-                                    <button type='submit' style="border: none;">
+                                    <button type='submit'  style="border: none;">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
                                 </form>
@@ -72,7 +72,11 @@
         <div class='col-sm-2'></div>
     </div>
 </div>
-
+<script>
+$(document).ready( function () {
+    $('#talumnos').DataTable();
+} );
+</script>
 
 <?php    
     include('templates/footer.php');

@@ -40,7 +40,7 @@
                 <label for="nombre">Confirme eliminar:</label>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Eliminar</button>
+                <button type="submit" class="btn btn-primary" name="submit">Eliminar</button>
                 <button type="button" class="btn btn-danger"
                     onclick="window.location.assign('todos_alumnos.php')">Regresar</button>
             </div>
